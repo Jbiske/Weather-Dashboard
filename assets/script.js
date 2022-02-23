@@ -56,9 +56,11 @@ var cityWeather = function (city, latt, long) {
 
                     var cityTitle = document.createElement("h2");
                     cityTitle.textContent = city.toUpperCase();
-
+                    cityTitle.className = "text-danger";
+                    
                     var cityDate = document.createElement("h2");
                     cityDate.textContent = date;
+                    cityDate.className = "text-danger";
 
                     var weatherIcon = document.createElement("img");
                     weatherIcon.src = "http://openweathermap.org/img/wn/" + current.weather[0].icon + "@2x.png";
@@ -66,13 +68,17 @@ var cityWeather = function (city, latt, long) {
 
                     var tempText = document.createElement("p");
                     tempText.textContent = "Temp: " + current.temp + " °F";
+                    tempText.className ="text-danger";
                     var windText = document.createElement("p");
                     windText.textContent = "Wind: " + current.wind_speed + " MPH";
+                     windText.className = "text-danger";
                     var humidityText = document.createElement("p");
                     humidityText.textContent = "Humidity: " + current.humidity + " %";
+                    humidityText.className = "text-danger";
 
                     var uvIndexText = document.createElement("p");
                     uvIndexText.textContent = "UV Index: " + current.uvi;
+
 
                     if (current.uvi < 2) {
                         uvIndexText.className = "bg-success"
